@@ -4,10 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../scripts/loading_screen.js" />
+    <script type="module" src="../scripts/loading_screen.js"></script>
     <link rel="stylesheet" href="../styles/dashboard.css" />
+    <script type="module" src="../scripts/dashboard_handler.js"></script>
   </head>
   <body>
+    <script>
+      function getCookie(name) {
+        const cDecoded = decodeURIComponent(document.cookie);
+        const cArray = cDecoded.split("; ");
+        let result = null;
+
+        cArray.forEach((element) => {
+          if (element.indexOf(name) == 0) {
+            result = element.substring(name.length + 1);
+          }
+        });
+        return result;
+      }
+
+      if (getCookie("user") === null) {
+        console.log("Benutzer ist nicht eingeloggt...");
+        window.location.href = "../index.html";
+      }
+    </script>
     <div class="loader" id="loader"></div>
+    <div class="wrapper" id="wrapper">
+      <h1>Benutzername wird geladen</h1>
+      <button id="logoutbtn">Ausloggen</button>
+    </div>
   </body>
 </html>

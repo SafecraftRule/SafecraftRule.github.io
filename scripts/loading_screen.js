@@ -1,4 +1,5 @@
 document.getElementById("wrapper").style.display = "none";
+console.log("Script geladen");
 
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Geladen!");
