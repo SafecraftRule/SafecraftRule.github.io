@@ -206,3 +206,27 @@ submitbtn.addEventListener("click", function (event) {
     }, 2000);
   }
 });
+
+// function checkHash() {
+//   // Hash aus der URL (ohne das #)
+//   const hash = window.location.hash.substring(1); // Entfernt das #
+
+//   // Alle Elemente mit IDs überprüfen
+//   const elements = document.querySelectorAll("[id]");
+
+//   // Alle verstecken
+//   elements.forEach((element) => element.classList.add("hidden"));
+
+//   // Passendes Element sichtbar machen, wenn es existiert
+//   const target = document.getElementById(hash);
+//   if (target) {
+//     target.classList.remove("hidden");
+//     target.classList.add("visible");
+//   }
+// }
+
+// // Beim Laden der Seite ausführen
+// checkHash();
+
+// // Wenn der Hash in der URL sich ändert (z. B. durch einen Link)
+// window.addEventListener("hashchange", checkHash);
