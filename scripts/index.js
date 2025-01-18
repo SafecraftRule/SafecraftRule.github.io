@@ -84,6 +84,7 @@ submitbtn.addEventListener("click", function (event) {
     function getCookie(name) {
       const cDecoded = decodeURIComponent(document.cookie);
       const cArray = cDecoded.split("; ");
+      let result = null;
 
       cArray.forEach((element) => {
         if (element.indexOf(name) == 0) {
