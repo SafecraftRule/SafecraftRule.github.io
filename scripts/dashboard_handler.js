@@ -1,7 +1,10 @@
 const logoutbtn = document.getElementById("logoutbtn");
 const userfield = document.getElementById("userh1");
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 import {
   getFirestore,
   getDoc,
@@ -19,14 +22,18 @@ const firebaseConfig = {
   appId: "1:1012497982084:web:5753a59e81b50093d218d1",
 };
 
-console.log(getCookie("uid"));
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const docRef = doc(db, "users", getCookie("uid"));
-const docSnap = await getDoc(docRef);
-userfield.innerHTML = docSnap.data().username;
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    const docRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(docRef);
+    userfield.innerHTML = docSnap.data().username;
+  } else {
+    window.location.href = "../index.html";
+  }
+});
 
 logoutbtn.addEventListener("click", async function () {
   function setCookie(name, value, daysToLive) {
