@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startseite</title>
     <link rel="stylesheet" href="styles/index.css" />
-    <script type="module" src="scripts/index.js"></script>
+    <script type="module" src="scripts/index.js" defer></script>
     <script type="module" src="scripts/loading_screen.js"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -28,9 +28,9 @@
         />
         <input
           class="inputfields"
-          type="text"
+          type="email"
           id="emailinput"
-          placeholder="Deine Email"
+          placeholder="Email"
           required
         />
         <input
@@ -43,6 +43,27 @@
         <button type="submit" class="buttons" id="registerbtn1">
           Registrieren
         </button>
+      </form>
+    </dialog>
+    <dialog id="logindia">
+      <button id="closedialog1"><i class="bx bx-x-circle"></i></button>
+      <h1>Login</h1>
+      <form action="">
+        <input
+          class="inputfields"
+          type="text"
+          id="emailinputlogin"
+          placeholder="Deine Email"
+          required
+        />
+        <input
+          type="text"
+          id="passwordinputlogin"
+          placeholder="Passwort"
+          required
+          class="inputfields"
+        />
+        <button type="submit" class="buttons" id="loginbtn1">Login</button>
       </form>
     </dialog>
     <div id="overlay"></div>
