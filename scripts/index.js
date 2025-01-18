@@ -51,6 +51,7 @@ logindiabtn.addEventListener("click", function (event) {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      setCookie("uid", user.uid, 30);
       setCookie("user", user, 30);
       window.location.href = "../seiten/dashboard.html";
     })
@@ -177,6 +178,7 @@ submitbtn.addEventListener("click", function (event) {
           email: email,
           isAdmin: false,
         });
+        setCookie("uid", user.uid, 30);
         setCookie("user", user, 30);
         window.location.href = "../index.html";
       })
