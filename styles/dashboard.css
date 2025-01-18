@@ -21,26 +21,3 @@
     transform: rotate(1turn);
   }
 }
-
-.wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  text-align: center;
-  margin: 46vh auto;
-}
-
-.wrapper .buttons {
-  font-size: 30px;
-  margin-left: 20px;
-  border-radius: 10px;
-  border: 7px solid rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.wrapper .buttons:hover {
-  border: 4px solid rgba(114, 110, 110, 0.993);
-  background-color: #3b3b3b;
-  color: #fff;
-}
