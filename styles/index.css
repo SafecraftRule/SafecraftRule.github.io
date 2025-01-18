@@ -3,4 +3,29 @@
 /* Schriftart für alles festlegen */
 * {
   font-family: "Kanit";
+  background-color: #fff;
+}
+
+/* Ladebildschirm */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px solid rgb(110, 111, 111);
+  border-right-color: rgb(0, 0, 0);
+  animation: l2 0.7s infinite linear;
+  margin: 46vh auto;
+}
+@keyframes l2 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  margin: 45vh auto;
 }
