@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script type="module" src="../scripts/loading_screen.js"></script>
     <link rel="stylesheet" href="../styles/dashboard.css" />
     <script type="module" src="../scripts/dashboard_handler.js"></script>
@@ -30,8 +34,15 @@
     </script>
     <div class="loader" id="loader"></div>
     <div class="wrapper" id="wrapper">
-      <h1 id="userh1">Benutzername wird geladen</h1>
-      <button id="logoutbtn">Ausloggen</button>
+      <dialog class="logoutdia" id="logoutdia">
+        <i class="bx bx-x-circle" id="closedialog"></i>
+        <h1>Wirklich ausloggen?</h1>
+        <button class="inputfields" id="logoutbtn">Bestätigen</button>
+      </dialog>
+      <div class="settings">
+        <h1 id="userh1">Benutzername wird geladen</h1>
+        <button class="inputfields" id="logoutdiabtn">Ausloggen</button>
+      </div>
     </div>
   </body>
 </html>

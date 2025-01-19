@@ -1,5 +1,9 @@
 const logoutbtn = document.getElementById("logoutbtn");
+const logoutdia = document.getElementById("logoutdia");
 const userfield = document.getElementById("userh1");
+const closediabtn = document.getElementById("closedialog");
+const logoutdiabtn = document.getElementById("logoutdiabtn");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import {
   getAuth,
@@ -29,13 +33,17 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     const docRef = doc(db, "users", user.uid);
     const docSnap = await getDoc(docRef);
-    userfield.innerHTML = docSnap.data().username;
+    userfield.innerHTML = "Willkommen, " + docSnap.data().username;
   } else {
     window.location.href = "../index.html";
   }
 });
 
-logoutbtn.addEventListener("click", async function () {
+logoutdiabtn.addEventListener("click", async function () {
+  logoutdia.showModal();
+});
+
+logoutbtn.addEventListener("click", function () {
   function setCookie(name, value, daysToLive) {
     const date = new Date();
     date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000);
@@ -61,5 +69,10 @@ logoutbtn.addEventListener("click", async function () {
   }
 
   deleteCookie("user");
+  auth.signOut();
   location.reload();
+});
+
+closediabtn.addEventListener("click", function () {
+  logoutdia.close();
 });
