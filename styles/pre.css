@@ -9,14 +9,6 @@ body {
   background-color: #f4f4f4;
 }
 
-.wrapper {
-  position: absolute;
-  left: 50px;
-  top: 50px;
-  display: inline-block;
-  text-align: center;
-}
-
 dialog {
   border-radius: 10px;
   border: solid 10px rgba(0, 0, 0, 0.2);
@@ -80,7 +72,6 @@ button:hover {
 }
 
 .textfield {
-  display: inline-block; /* Span als Block-Element behandeln */
   padding: 10px;
   font-size: 16px;
   margin-top: 60px;
@@ -88,6 +79,18 @@ button:hover {
   border: 4px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   transform: scale(3);
+  display: inline-block; /* Ermöglicht flexiblere Zeilenumbrüche */
+  word-wrap: break-word; /* Lange Wörter umbrechen */
+  word-break: break-word; /* Unterstützung für sehr lange Wörter */
+  width: 200px; /* Begrenze die Breite des Spans, damit der Text umbricht */
+}
+
+#changetextsup {
+  width: 500px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: absolute;
 }
 
 /* Ladebildschirm */
@@ -112,6 +115,30 @@ button:hover {
   display: block;
 }
 
+#closedialog {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#closedialog:hover {
+  color: #9c9999;
+}
+
+.wrapper {
+  margin: 10px auto;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  display: inline-block;
+  text-align: center;
+}
+
 .inputfields {
   padding: 10px;
   cursor: pointer;
@@ -121,7 +148,7 @@ button:hover {
   border: solid 5px rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.2);
   transition: 0.5s;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .inputfields:hover {

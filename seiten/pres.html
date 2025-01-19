@@ -66,29 +66,41 @@
         </ul>
       </div>
       <span id="my-text" class="textfield">Dein Text</span>
-      <dialog id="changetextsup">
-        <button id="closedialog"><i class="bx bx-x-circle"></i></button>
-        <input
-          type="text"
-          id="input-text"
-          class="inputfields"
-          placeholder="Neuer Text"
-        />
-        <button id="update-text-button">Text ändern</button>
-        <input
-          type="text"
-          id="scale"
-          class="inputfields"
-          placeholder="Skalierung hier eingeben"
-        />
-        <button id="scalebtn">Skalierung festlegen</button>
-        <input
-          type="color"
-          id="colorborderspan"
-          placeholder="Randfarbe auswählen"
-        />
-        <button id="bordercolorbtn">Farbe ändern</button>
-      </dialog>
+      <form action="">
+        <dialog id="changetextsup">
+          <button id="closedialog"><i class="bx bx-x-circle"></i></button>
+          <input
+            type="text"
+            aria-multiline="true"
+            id="input-text"
+            class="inputfields"
+            placeholder="Neuer Text"
+          />
+          <button id="update-text-button">Text ändern</button>
+          <input
+            type="number"
+            id="scale"
+            class="inputfields"
+            placeholder="Skalierung hier eingeben"
+          />
+          <button id="scalebtn">Skalierung festlegen</button>
+          <input
+            type="color"
+            id="colorborderspan"
+            placeholder="Randfarbe auswählen"
+          />
+          <button id="bordercolorbtn">Farbe ändern</button>
+          <input
+            type="number"
+            placeholder="Linienumbruch nach ... Pixeln"
+            id="linebreak"
+            class="inputfields"
+          />
+          <button id="linebreakbtn">Linienumbruch speichern</button>
+          <input type="number" id="fontsizeinput" class="inputfields" />
+          <button id="changefontsizebtn">Schriftgröße ändern</button>
+        </dialog>
+      </form>
     </div>
   </body>
 </html>

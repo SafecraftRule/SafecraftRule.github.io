@@ -38,7 +38,11 @@ const removespanbtn = document.getElementById("removespanbtn");
 const scalebtn = document.getElementById("scalebtn");
 const scaleinput = document.getElementById("scale");
 const colorinput = document.getElementById("colorborderspan");
+const linebreakbtn = document.getElementById("linebreakbtn");
+const linebreakinput = document.getElementById("linebreak");
 const colorbtn = document.getElementById("bordercolorbtn");
+const fontsizeinput = document.getElementById("fontsizeinput");
+const fontsizebtn = document.getElementById("changefontsizebtn");
 
 removespanbtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -73,4 +77,16 @@ colorbtn.addEventListener("click", function (event) {
   event.preventDefault();
   const color = colorinput.value;
   myTextSpan.style.border = `solid 4px ${color}`;
+});
+
+linebreakbtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newLineBreakWidth = linebreakinput.value;
+  myTextSpan.style.width = `${newLineBreakWidth}px`;
+});
+
+fontsizebtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newFontSize = fontsizeinput.value;
+  myTextSpan.style.fontSize = `${newFontSize}px`;
 });
