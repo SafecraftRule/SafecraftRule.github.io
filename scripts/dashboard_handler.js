@@ -3,6 +3,7 @@ const logoutdia = document.getElementById("logoutdia");
 const userfield = document.getElementById("userh1");
 const closediabtn = document.getElementById("closedialog");
 const logoutdiabtn = document.getElementById("logoutdiabtn");
+const newprebtn = document.getElementById("newpresbtn");
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import {
@@ -41,6 +42,10 @@ onAuthStateChanged(auth, async (user) => {
 
 logoutdiabtn.addEventListener("click", async function () {
   logoutdia.showModal();
+});
+
+newprebtn.addEventListener("click", function () {
+  window.location.href = "../seiten/pres.html";
 });
 
 logoutbtn.addEventListener("click", function () {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>- PreSafe</title>
+    <title>Design ohne Titel - PreSafe</title>
     <script type="module" src="../scripts/loading_screen.js"></script>
     <script type="module" src="../scripts/pre.js" defer></script>
     <link rel="stylesheet" href="../styles/pre.css" />
@@ -13,6 +13,7 @@
     />
   </head>
   <body>
+    <div id="loader"></div>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
       import {
@@ -51,25 +52,30 @@
       <div class="menu">
         <ul>
           <li>
-            <a href="" id="move-button"><i class="bx bx-move"></i></a>
+            <a id="move-button"><i class="bx bx-move"></i></a>
           </li>
           <li>
-            <a href="#"><i class="bx bx-minus-circle"></i></a>
+            <a id="removespanbtn"><i class="bx bx-minus-circle"></i></a>
           </li>
           <li>
-            <a href="#"><i class="bx bxs-layer"></i></a>
+            <a><i class="bx bxs-layer"></i></a>
           </li>
           <li>
-            <a href="#"><i class="bx bxs-cog"></i></a>
+            <a id="settingstextbtn"><i class="bx bxs-cog"></i></a>
           </li>
         </ul>
       </div>
-      <input
-        type="text"
-        id="textfield"
-        placeholder="Textfeld"
-        class="textfield"
-      />
+      <span id="my-text" class="textfield">Deine Text</span>
+      <dialog id="changetextsup">
+        <button id="closedialog"><i class="bx bx-x-circle"></i></button>
+        <input
+          type="text"
+          id="input-text"
+          class="inputfields"
+          placeholder="Neuer Text"
+        />
+        <button id="update-text-button">Text ändern</button>
+      </dialog>
     </div>
   </body>
 </html>

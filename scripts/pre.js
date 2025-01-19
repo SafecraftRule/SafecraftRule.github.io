@@ -1,10 +1,11 @@
-const container = document.querySelector(".wrapper"); // Container für Textfeld und Menü
+const container = document.querySelector(".wrapper"); // Container für Span und Menü
 const button = document.querySelector("#move-button"); // Button für Verschiebung
 
 let isDragging = false; // Status, ob das Dragging aktiv ist
 
 // Wenn der Button gedrückt wird
-button.addEventListener("mousedown", () => {
+button.addEventListener("mousedown", (event) => {
+  event.preventDefault();
   isDragging = true;
   container.style.position = "absolute"; // Stelle sicher, dass der Container absolute Positionierung hat
   container.style.cursor = "grabbing"; // Mauszeiger ändern
@@ -25,4 +26,35 @@ document.addEventListener("mouseup", () => {
     isDragging = false;
     container.style.cursor = "default"; // Mauszeiger zurücksetzen
   }
+});
+
+const changetxtdia = document.getElementById("changetextsup");
+const updateTextButton = document.querySelector("#update-text-button");
+const inputText = document.querySelector("#input-text");
+const myTextSpan = document.querySelector("#my-text");
+const closebtn = document.getElementById("closedialog");
+const settingsbtntext = document.getElementById("settingstextbtn");
+const removespanbtn = document.getElementById("removespanbtn");
+
+removespanbtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  myTextSpan.remove();
+});
+
+closebtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  changetxtdia.close();
+});
+
+settingsbtntext.addEventListener("click", function (event) {
+  event.preventDefault();
+  changetxtdia.showModal();
+});
+
+// Wenn der Button geklickt wird, den Text aus dem Eingabefeld übernehmen
+updateTextButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const newText = inputText.value; // Text aus dem Eingabefeld
+  myTextSpan.innerText = newText; // Text im span-Element aktualisieren
+  inputText.value = ""; // Eingabefeld leeren
 });
