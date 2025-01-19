@@ -174,8 +174,8 @@ submitbtn.addEventListener("click", function (event) {
         var ref = doc(db, "users", userCredential.user.uid);
         await setDoc(ref, {
           username: username,
-          password: password,
-          email: email,
+          password: password1,
+          email: email1,
           isAdmin: false,
         });
         setCookie("uid", user.uid, 30);
