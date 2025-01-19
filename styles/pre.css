@@ -50,6 +50,7 @@ button:hover {
   justify-content: center;
   text-align: center;
   text-align: center;
+  z-index: 999;
   display: none; /* Menü standardmäßig verstecken */
 }
 
@@ -86,6 +87,7 @@ button:hover {
   background: none;
   border: 4px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
+  transform: scale(3);
 }
 
 /* Ladebildschirm */

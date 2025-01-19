@@ -35,6 +35,10 @@ const myTextSpan = document.querySelector("#my-text");
 const closebtn = document.getElementById("closedialog");
 const settingsbtntext = document.getElementById("settingstextbtn");
 const removespanbtn = document.getElementById("removespanbtn");
+const scalebtn = document.getElementById("scalebtn");
+const scaleinput = document.getElementById("scale");
+const colorinput = document.getElementById("colorborderspan");
+const colorbtn = document.getElementById("bordercolorbtn");
 
 removespanbtn.addEventListener("click", function (event) {
   event.preventDefault();
@@ -57,4 +61,16 @@ updateTextButton.addEventListener("click", (event) => {
   const newText = inputText.value; // Text aus dem Eingabefeld
   myTextSpan.innerText = newText; // Text im span-Element aktualisieren
   inputText.value = ""; // Eingabefeld leeren
+});
+
+scalebtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const newScale = scaleinput.value;
+  myTextSpan.style.transform = `scale(${newScale})`;
+});
+
+colorbtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  const color = colorinput.value;
+  myTextSpan.style.border = `solid 4px ${color}`;
 });
