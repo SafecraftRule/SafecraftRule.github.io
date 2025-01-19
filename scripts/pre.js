@@ -90,3 +90,67 @@ fontsizebtn.addEventListener("click", function (event) {
   const newFontSize = fontsizeinput.value;
   myTextSpan.style.fontSize = `${newFontSize}px`;
 });
+
+const menu = document.querySelector("#menu");
+const textfields = document.querySelectorAll(".textfield");
+
+// Zeige das Menü über dem Textfeld an, über dem sich der Mauszeiger befindet
+textfields.forEach((textfield) => {
+  textfield.addEventListener("mouseenter", (e) => {
+    const rect = textfield.getBoundingClientRect(); // Position des Textfelds abrufen
+    menu.style.display = "block";
+    menu.style.left = `${rect.left}px`;
+    menu.style.top = `${rect.bottom + window.scrollY}px`; // Y-Position anpassen
+  });
+
+  textfield.addEventListener("mouseleave", () => {
+    // Verstecke das Menü, wenn die Maus das Textfeld verlässt
+    menu.style.display = "none";
+  });
+
+  // Behalte das Menü sichtbar, wenn man darauf hovert
+  menu.addEventListener("mouseenter", () => {
+    menu.style.display = "block";
+  });
+
+  menu.addEventListener("mouseleave", () => {
+    menu.style.display = "none";
+  });
+});
+
+const addButton = document.querySelector("#add-textfield-button");
+const textfieldsContainer = document.querySelector(".textfields");
+
+// Funktion, um ein neues Textfeld hinzuzufügen
+addButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  // Neues span-Element erstellen
+  const newTextfield = document.createElement("span");
+  newTextfield.classList.add("textfield");
+  newTextfield.textContent = `Textfeld ${
+    textfieldsContainer.children.length + 1
+  }`;
+
+  // Event-Listener hinzufügen, um das Menü anzuzeigen
+  newTextfield.addEventListener("mouseenter", (e) => {
+    const rect = newTextfield.getBoundingClientRect();
+    menu.style.display = "block";
+    menu.style.left = `${rect.left}px`;
+    menu.style.top = `${rect.bottom + window.scrollY}px`;
+  });
+
+  newTextfield.addEventListener("mouseleave", () => {
+    menu.style.display = "none";
+  });
+
+  menu.addEventListener("mouseenter", () => {
+    menu.style.display = "block";
+  });
+
+  menu.addEventListener("mouseleave", () => {
+    menu.style.display = "none";
+  });
+
+  // Neues Textfeld in den Container einfügen
+  textfieldsContainer.appendChild(newTextfield);
+});
