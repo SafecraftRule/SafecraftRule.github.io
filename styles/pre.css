@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.wrapper {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  display: inline-block;
+  text-align: center;
+}
+
+.menu {
+  position: absolute;
+  top: -50px; /* Positioniere das Menü über dem Textfeld */
+  left: 0;
+  width: 100%;
+  background-color: #0078d7;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  display: none; /* Menü standardmäßig verstecken */
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu li {
+  padding: 5px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.textfield {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 45px;
+}
+
+.menu:hover,
+.textfield:hover {
+  display: block;
+}

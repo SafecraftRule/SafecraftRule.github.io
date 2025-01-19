@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>- PreSafe</title>
+    <script type="module" src="../scripts/loading_screen.js"></script>
+    <script type="module" src="../scripts/pre.js" defer></script>
+    <link rel="stylesheet" href="../styles/pre.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+      import {
+        getFirestore,
+        doc,
+        getDoc,
+        setDoc,
+      } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDw4AER-2QegAwnGv5nKA90F4NakYV5WX8",
+        authDomain: "safecraftrule.firebaseapp.com",
+        databaseURL:
+          "https://safecraftrule-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "safecraftrule",
+        storageBucket: "safecraftrule.firebasestorage.app",
+        messagingSenderId: "1012497982084",
+        appId: "1:1012497982084:web:5753a59e81b50093d218d1",
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+        } else {
+          window.location.href = "../index.html";
+        }
+      });
+    </script>
+    <div id="loader"></div>
+    <div class="wrapper" id="wrapper">
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="" id="move-button"><i class="bx bx-move"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bx-minus-circle"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxs-layer"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bx bxs-cog"></i></a>
+          </li>
+        </ul>
+      </div>
+      <input
+        type="text"
+        id="textfield"
+        placeholder="Textfeld"
+        class="textfield"
+      />
+    </div>
+  </body>
+</html>
