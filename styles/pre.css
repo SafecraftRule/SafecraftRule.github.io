@@ -28,49 +28,17 @@ button:hover {
   transform: scale(0.9);
 }
 
-.menu {
-  position: absolute;
-  top: -10px; /* Positioniere das Menü über dem Text */
-  left: 0;
-  width: 100%;
-  background-color: #0078d7;
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+/* Wrapper */
+.wrapper {
+  margin: 20px;
+  position: relative; /* Wichtig für die relative Positionierung */
+  max-width: 600px; /* Optional: Begrenze die Breite */
   padding: 10px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-align: center;
-  z-index: 999;
-  display: none; /* Menü standardmäßig verstecken */
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
 }
 
-.wrapper:hover .menu {
-  display: block;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  cursor: pointer;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-.menu li {
-  cursor: pointer;
-  padding: 0 auto;
-}
-
-.menu a {
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
+/* Textfelder-Container */
 .textfields {
   margin-top: 20px;
   display: flex;
@@ -78,6 +46,7 @@ button:hover {
   gap: 10px;
 }
 
+/* Textfeld-Styling */
 .textfield {
   display: inline-block;
   padding: 10px;
@@ -85,6 +54,21 @@ button:hover {
   border: 1px solid #ccc;
   cursor: pointer;
 }
+
+/* Menü */
+.menu {
+  position: absolute; /* Positioniere das Menü relativ zum nächsten positionierten Vorfahren */
+  display: none; /* Standardmäßig ausgeblendet */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000; /* Über anderen Elementen anzeigen */
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
 #changetextsup {
   width: 500px;
   align-items: center;
@@ -109,12 +93,6 @@ button:hover {
   }
 }
 
-/* Menü anzeigen, wenn man über das Span hovert */
-.textfield:hover + .menu,
-.menu:hover {
-  display: block;
-}
-
 #closedialog {
   position: absolute;
   top: 7px;
@@ -126,17 +104,56 @@ button:hover {
   transition: 0.3s;
 }
 
-#closedialog:hover {
-  color: #9c9999;
+.wrapper {
+  margin: 20px;
+  position: relative;
 }
 
-.wrapper {
-  margin: 10px auto;
-  position: absolute;
-  left: 50px;
-  top: 50px;
+.textfields {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textfield {
   display: inline-block;
-  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px 10px;
+}
+
+.menu ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+#closedialog:hover {
+  color: #9c9999;
 }
 
 .inputfields {

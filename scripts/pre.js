@@ -122,8 +122,7 @@ const addButton = document.querySelector("#add-textfield-button");
 const textfieldsContainer = document.querySelector(".textfields");
 
 // Funktion, um ein neues Textfeld hinzuzufügen
-addButton.addEventListener("click", (event) => {
-  event.preventDefault();
+addButton.addEventListener("click", () => {
   // Neues span-Element erstellen
   const newTextfield = document.createElement("span");
   newTextfield.classList.add("textfield");
@@ -133,16 +132,17 @@ addButton.addEventListener("click", (event) => {
 
   // Event-Listener hinzufügen, um das Menü anzuzeigen
   newTextfield.addEventListener("mouseenter", (e) => {
-    const rect = newTextfield.getBoundingClientRect();
+    const rect = newTextfield.getBoundingClientRect(); // Position des Textfelds abrufen
     menu.style.display = "block";
-    menu.style.left = `${rect.left}px`;
-    menu.style.top = `${rect.bottom + window.scrollY}px`;
+    menu.style.left = `${rect.left + window.scrollX}px`; // X-Position
+    menu.style.top = `${rect.bottom + window.scrollY}px`; // Y-Position unterhalb des Textfelds
   });
 
   newTextfield.addEventListener("mouseleave", () => {
     menu.style.display = "none";
   });
 
+  // Menü sichtbar halten, wenn die Maus darauf ist
   menu.addEventListener("mouseenter", () => {
     menu.style.display = "block";
   });
