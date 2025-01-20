@@ -133,9 +133,9 @@ addButton.addEventListener("click", () => {
   // Event-Listener hinzufügen, um das Menü anzuzeigen
   newTextfield.addEventListener("mouseenter", (e) => {
     const rect = newTextfield.getBoundingClientRect(); // Position des Textfelds abrufen
-    menu.style.display = "block";
-    menu.style.left = `${rect.left + window.scrollX}px`; // X-Position
-    menu.style.top = `${rect.bottom + window.scrollY}px`; // Y-Position unterhalb des Textfelds
+    menu.style.display = "inline";
+    menu.style.left = `${rect.left}px`; // X-Position
+    menu.style.top = `${rect.bottom}px`; // Y-Position unterhalb des Textfelds
   });
 
   newTextfield.addEventListener("mouseleave", () => {

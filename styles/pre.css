@@ -47,7 +47,7 @@ button:hover {
 }
 
 /* Textfeld-Styling */
-.textfield {
+span {
   display: inline-block;
   padding: 10px;
   background-color: #f0f0f0;
@@ -57,7 +57,7 @@ button:hover {
 
 /* Menü */
 .menu {
-  position: absolute; /* Positioniere das Menü relativ zum nächsten positionierten Vorfahren */
+  position: relative; /* Positioniere das Menü relativ zum nächsten positionierten Vorfahren */
   display: none; /* Standardmäßig ausgeblendet */
   background-color: #fff;
   border: 1px solid #ccc;
