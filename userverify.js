@@ -23,13 +23,11 @@ const auth = getAuth(app);
 document.addEventListener("DOMContentLoaded", () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            if(!window.location.href.match("index.html")){
-                console.log("dawdawd")
-                window.location.href = "index.html"; // Nutzer ist eingeloggt
-            }
+            console.log("Eingeloggt!");
+            
         } else {
             if(!window.location.href.match("login.html")){
-                console.log("dawdawd");
+                console.log("Nicht eingeloggt.");
                 
                 window.location.href = "login.html"; 
             } // Nutzer ist nicht eingeloggt

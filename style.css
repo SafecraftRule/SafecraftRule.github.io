@@ -8,7 +8,7 @@
             top: 0;
             width: 250px;
             height: 100%;
-            background-color: #333;
+            background-color: #536878;
             color: white;
             display: flex;
             flex-direction: column;
@@ -32,7 +32,7 @@
             background-color: transparent;
             color: white;
             font-size: 30px;
-            color: #C0C0C0;
+            color: #3e4d58;
             border: none;
             transition: 0.18s;
             padding: 5px 10px;
@@ -41,7 +41,7 @@
         }
 
         .toggle-btn:hover{
-            color: #818181;
+            color: #4e5d68;
         }
 
         /* Styling der Buttons in der Sidebar */
@@ -52,12 +52,12 @@
 
         .sidebar-buttons button{
             background-color: transparent;
-            color: white;
+            color: #a6c0d3;
             border: none;
             padding: 10px;
             margin: 5px 0;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s;
             border-radius: 5px;
             font-size: 18px;
             text-align: center;
@@ -65,7 +65,7 @@
 
         .sidebar-buttons button:hover {
             transform: scale(0.95);
-            background-color: #3f3f3f;
+            background-color: #5d7484;
         }
 
         /* "Mein Account"-Button unten mit Padding */
@@ -77,23 +77,23 @@
         .account-button {
             width: 100%;
             background-color: transparent; /* Hintergrundfarbe bleibt */
-            color: white;
+            color: #a6c0d3;
             padding: 15px;
             font-size: 16px;
             cursor: pointer;
             transition: 0.2s;
             border-radius: 5px; /* Abgerundete Ecken */
             text-align: center;
-            border: 1.9px solid #3f3f3f;
+            border: 1.9px solid #708090;
         }
 
         .account-button:hover{
-            transform: scale(0.99);
-            background-color: #3f3f3f;
+            transform: scale(0.97);
+            background-color: #5d7484;
         }
         
         body{
-            background-color: #555555;
+            background-color: #708090;
             transition: 0.3s;
         }
 

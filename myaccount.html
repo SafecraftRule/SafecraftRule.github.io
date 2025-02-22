@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script type="module" src="userverify.js"></script>
+    <script type="module" src="generalfunctions.js"></script>
+    <link rel="stylesheet" href="myaccount.css" />
+  </head>
+  <body>
+    <button class="back-button" onclick="window.location.href='index.html'">
+      <i class="bx bx-arrow-back"></i>
+    </button>
+
+    <div class="account-container">
+      <div class="profile-section">
+        <img src="profildbild.png" alt="Profilbild" class="profile-picture" />
+        <h2 id="username">[USERNAME]</h2>
+        <button class="buttons">Profilbild ändern</button>
+      </div>
+
+      <div class="settings-section">
+        <h3>Einstellungen</h3>
+        <button id="changepasswordbtn" class="buttons">Passwort ändern</button>
+        <button id="notificationbtn" class="buttons">Benachrichtigungen</button>
+        <button id="logoutbtn" class="buttons">Abmelden</button>
+      </div>
+    </div>
+
+    <script src="generalfunctions.js" type="module"></script>
+  </body>
+</html>
