@@ -64,8 +64,12 @@
 }
 
 .sidebar-buttons button:hover {
-  transform: scale(0.95);
   background-color: #5d7484;
+  transform: scale(0.98);
+}
+
+.sidebar-buttons button:active {
+  transform: scale(0.95);
 }
 
 /* "Mein Account"-Button unten mit Padding */
@@ -88,7 +92,6 @@
 }
 
 .account-button:hover {
-  transform: scale(0.97);
   background-color: #5d7484;
 }
 .account-button:active {

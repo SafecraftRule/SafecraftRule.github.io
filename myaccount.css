@@ -1,73 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-*{
-    font-weight: bold;
-    font-family: Poppins;
+* {
+  font-weight: bold;
+  font-family: Poppins;
 }
-body{
-    background-color: #708090;
-    transition: 0.3s;
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+body {
+  background-color: #708090;
+  transition: 0.3s;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .account-container {
-    width: 300px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: auto;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
 }
 
 .profile-section {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-picture {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #007bff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
 }
 
 .buttons {
-    width: 100%;
-    background-color: transparent; /* Hintergrundfarbe bleibt */
-    color: #a6c0d3;
-    padding: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px; /* Abgerundete Ecken */
-    text-align: center;
-    border: 1.9px solid #708090;
+  width: 100%;
+  background-color: transparent; /* Hintergrundfarbe bleibt */
+  color: #a6c0d3;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px; /* Abgerundete Ecken */
+  text-align: center;
+  border: 1.9px solid #708090;
 }
 
 .buttons:hover {
-    transform: scale(0.99);
-    background-color: #5d7484;
+  transform: scale(0.99);
+  background-color: #5d7484;
 }
 
 .back-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #007bff;
-    color: white;
-    border: 1.9px solid #708090;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.2s;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #007bff;
+  color: white;
+  border: 1.9px solid #708090;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.15s;
 }
 
 .back-button:hover {
-    transform: scale(0.97);
-    background-color: #5d7484;
-    color: rgb(170, 165, 165);
+  background-color: #0759b0;
+  color: rgb(170, 165, 165);
+}
+
+.back-button:active {
+  transform: scale(0.97);
 }
