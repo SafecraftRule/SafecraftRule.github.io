@@ -35,31 +35,40 @@ const logoutbtn = document.getElementById("logoutbtn");
 //Textfields
 const usernamefield = document.getElementById("username");
 
-var uservar;
+await onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // Referenz auf das Dokument in der Collection 'users'
+    const docRef = doc(db, "users", user.uid); // Ersetzen Sie 'users' und 'userID' mit Ihrem Collection-Namen und Dokument-ID
 
-document.addEventListener("DOMContentLoaded", async () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      uservar = user;
-    } else {
-      if (!window.location.href.match("login.html")) {
-        console.log("Nicht eingeloggt.");
+    // Dokument abrufen
+    getDoc(docRef)
+      .then((docSnap) => {
+        if (docSnap.exists()) {
+          console.log("Username: ", docSnap.data().username);
+          try {
+            usernamefield.innerHTML = "Willkommen, " + docSnap.data().username;
+          } catch (e) {
+            console.warn(
+              "Das Element mit der ID 'username' kann nicht gefunden werden! Fehlerbeschreibung: " +
+                e
+            );
+          }
+        } else {
+          console.error("Kein solches Dokument!");
+        }
+      })
+      .catch((error) => {
+        console.error("Fehler beim Abrufen des Dokuments:", error);
+      });
+    // Login Fehler
+  } else {
+    if (!window.location.href.match("login.html")) {
+      console.warn("Nicht eingeloggt.");
 
-        window.location.href = "login.html";
-      } // Nutzer ist nicht eingeloggt
-    }
-  });
+      window.location.href = "login.html";
+    } // Nutzer ist nicht eingeloggt
+  }
 });
-
-const docRef = doc(db, "users", "test123");
-const docSnap = await getDoc(docRef);
-console.log("UID: " + uservar.uid);
-
-if (docSnap) {
-  usernamefield.innerHTML = "Willkommen, " + docSnap.data().username;
-} else {
-  console.log("Fehler!");
-}
 
 logoutbtn.addEventListener("click", function () {
   signOut(auth)
