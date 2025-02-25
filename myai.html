@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="myai.css" />
+    <script type="module" src="userverify.js"></script>
+    <script type="module" src="myai.js"></script>
+  </head>
+  <body>
+    <div id="generatedTextContainer" style="display: none">
+      <p id="generatedText"></p>
+    </div>
+
+    <button
+      onclick="document.getElementById('meinDialog').showModal()"
+      id="settings"
+    >
+      <i class="bx bxs-cog"></i>
+    </button>
+
+    <dialog id="meinDialog">
+      <strong>Meine KI einrichten</strong>
+      <p>Gehe zu deinen OpenAI API Keys und gib hier deinen API Key ein.</p>
+
+      <!-- Eingabefelder -->
+      <input
+        type="text"
+        class="dialog"
+        id="apikeyInput"
+        placeholder="Dein API Key"
+      />
+
+      <button
+        onclick="document.getElementById('meinDialog').close()"
+        id="closeDialog"
+      >
+        Fertig
+      </button>
+    </dialog>
+
+    <div class="input-container">
+      <input
+        type="text"
+        class="non-dia"
+        id="messageinput"
+        placeholder="Schreibe etwas..."
+      />
+      <button id="sendbtn">Senden</button>
+    </div>
+  </body>
+</html>

@@ -42,6 +42,7 @@ document
       password: document.getElementById("password").value,
       pro: false,
       username: document.getElementById("username").value,
+      myaikey: "undefined",
     };
 
     const email = document.getElementById("email").value;
