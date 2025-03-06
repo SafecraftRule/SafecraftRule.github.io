@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamingBuilders</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <style>
+        @font-face {
+            font-family: 'Minecraft-Font';
+            src: url('MinecraftTen-VGORe.ttf') format('truetype');
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        h1 {
+            font-family: 'Minecraft-Font', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #666;
+        }
+        .dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: #666;
+            padding: 20px;
+            width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .dialog.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 20px;
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .dialog-body {
+            margin-top: 15px;
+        }
+        .steps {
+            margin-top: 10px;
+            padding: 10px;
+            background: #777;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>DreamingBuilders</h1>
+    <button class="btn" onclick="openDialog()">
+        <i class='bx bx-wifi'></i> Verbinden
+    </button>
+    
+    <div id="dialog" class="dialog">
+        <div class="dialog-header">
+            <span>Verbinden</span>
+            <button class="close-btn" onclick="closeDialog()">&times;</button>
+        </div>
+        <div class="dialog-body">
+            <div class="steps">
+                <p><strong>Schritt 1:</strong> Öffne Minecraft</p>
+                <p><strong>Schritt 2:</strong> Gehe zu "Mehrspieler"</p>
+                <p><strong>Schritt 3:</strong> Klicke auf "Server hinzufügen"</p>
+                <p><strong>Schritt 4:</strong> Gib die Server-Adresse ein: <strong>dreamingbuilders.aternos.me</strong></p>
+                <p><strong>Schritt 5:</strong> Speichere und trete bei!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDialog() {
+            let dialog = document.getElementById("dialog");
+            dialog.style.display = "block";
+            setTimeout(() => dialog.classList.add("show"), 10);
+        }
+        function closeDialog() {
+            let dialog = document.getElementById("dialog");
+            dialog.classList.remove("show");
+            setTimeout(() => dialog.style.display = "none", 300);
+        }
+    </script>
+</body>
+</html>
