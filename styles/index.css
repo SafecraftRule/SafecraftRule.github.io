@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "MinecraftTen";
+  src: url("/MinecraftTen-VGORe.ttf") format("truetype");
+}
+
+body {
+  background-color: #5d8aa8;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "MinecraftTen";
+  height: 95vh;
+}
+
+h1 {
+  font-family: "MinecraftTen";
+  color: #263a48;
+}
