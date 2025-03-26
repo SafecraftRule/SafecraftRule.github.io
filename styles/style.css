@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&display=swap");
+
+body {
+  background-color: #5d8aa8;
+  animation: appear 0.5s ease-in-out;
+}
+
+.maintext {
+  font-family: "Boldonse";
+  color: #003262;
+}
+
+.text {
+  font-family: "Boldonse";
+  color: #003262;
+}
+
+.show {
+  padding-left: 60px;
+  padding-top: 60px;
+}
+
+#changintext {
+  text-align: left;
+}
+
+#registerbtn {
+  padding: 10px;
+  text-align: center;
+  color: #003262;
+  font-family: "Boldonse";
+  cursor: pointer;
+  border: 1.9px solid #2164a6;
+  border-radius: 8px;
+  background-color: #318ce7;
+  transition: 0.2s;
+}
+
+#registerbtn:hover {
+  background-color: #2a70b6;
+  transform: scale(1.05);
+}
+
+#registerbtn:active {
+  transform: scale(0.95);
+  background-color: #235587;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
