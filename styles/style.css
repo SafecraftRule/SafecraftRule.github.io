@@ -29,15 +29,22 @@ footer {
 h1 {
   margin-bottom: 0px;
   margin-top: 75px;
+  margin-right: 50px;
   margin-left: 75px;
 }
 
-h3 {
+h3,
+h4,
+h5 {
+  margin-right: 75px;
   margin-left: 75px;
 }
 
 button {
   margin-left: 75px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
   padding: 10px;
   font-family: "Boldonse";
   background-color: var(--btnbgclr);
@@ -56,4 +63,21 @@ button:hover {
 button:active {
   transform: scale(0.95);
   background-color: var(--btnfocclr);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #20303b;
+  transition: 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #19252d;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--trackclr);
 }
