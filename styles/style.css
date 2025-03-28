@@ -1,72 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Boldonse&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
 html,
 body {
-  background-color: #5d8aa8;
-  height: 99%;
+  height: 100%;
+  background-color: var(--bgclr);
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  font-family: "Boldonse";
+  color: var(--prfontclr);
+  height: 100%;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 footer {
   text-align: center;
-  font-family: "Boldonse";
-}
-
-.maintext {
-  font-family: "Boldonse";
-  color: #003262;
-}
-
-/* Hauptcontainer */
-.container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%; /* Wichtig für den Footer */
-}
-
-.text {
-  font-family: "Boldonse";
-  color: #003262;
-}
-
-.show {
-  padding-left: 60px;
-  padding-top: 60px;
-  flex: 1;
-}
-
-#changintext {
-  text-align: left;
-}
-
-#registerbtn {
   padding: 10px;
-  text-align: center;
-  color: #003262;
   font-family: "Boldonse";
-  cursor: pointer;
-  border: 1.9px solid #2164a6;
+  color: var(--prfontclr);
+}
+
+h1 {
+  margin-bottom: 0px;
+  margin-top: 75px;
+  margin-left: 75px;
+}
+
+h3 {
+  margin-left: 75px;
+}
+
+button {
+  margin-left: 75px;
+  padding: 10px;
+  font-family: "Boldonse";
+  background-color: var(--btnbgclr);
+  border: var(--prbd);
   border-radius: 8px;
-  background-color: #318ce7;
+  color: var(--btnfontclr);
+  cursor: pointer;
   transition: 0.2s;
 }
 
-#registerbtn:hover {
-  background-color: #2a70b6;
+button:hover {
+  background-color: var(--btnhovclr);
   transform: scale(1.05);
 }
 
-#registerbtn:active {
+button:active {
   transform: scale(0.95);
-  background-color: #235587;
-}
-
-@keyframes appear {
-  from {
-    transform: translateY(10%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  background-color: var(--btnfocclr);
 }
