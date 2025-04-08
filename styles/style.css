@@ -64,20 +64,3 @@ button:active {
   transform: scale(0.95);
   background-color: var(--btnfocclr);
 }
-
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #20303b;
-  transition: 0.2s;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #19252d;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--trackclr);
-}
