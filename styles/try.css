@@ -27,6 +27,7 @@ body {
   font-size: 27px;
   color: #1a3a4f;
   text-align: center;
+  box-shadow: #305972 0px 0px 100px 0px;
 }
 
 article {
